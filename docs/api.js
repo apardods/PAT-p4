@@ -2,15 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('form').onsubmit = function() {
 
         // Send a GET request to the URL
-        fetch('https://api.exchangeratesapi.io/latest?base=USD')
+        fetch('http://api.currencylayer.com/live?access_key=6d73f133f2b1f623f84fb7f20f01cd47&currencies=CHF,GBP,EUR,JPY')
         // Put response into json form
         .then(response => response.json())
         .then(data => {
             // Get currency from user input and convert to upper case
-            const currency = document.querySelector('#currency').value.toUpperCase();
+            const base = "USD";
+            const currency = base.concat(document.querySelector('#currency').value.toUpperCase());
 
             // Get rate from data
-            const rate = data.rates[currency];
+            const rate = data.quotes[currency];
 
             // Check if currency is valid:
             if (rate !== undefined) {

@@ -16,7 +16,7 @@
   <!-- Favicons -->
 
   <meta name="theme-color" content="#7952b3">
-
+  <script src="api.js"></script>
 
   <style>
       .bd-placeholder-img {
@@ -64,11 +64,28 @@
 
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-4 fw-normal">Precios para empresas</h1>
-      <p class="fs-5 text-muted">Encuentra el programa ideal para las necesidades de tu empresa y optimiza tu gasto energético.</p>
+      <p class="fs-5 text-muted">Escoja la divisa deseada para ver los precios en ella.</p>
     </div>
   </header>
 
   <main>
+    <div>
+      <form>
+        <label for="currency" class="form-label">Introduzca una divisa:</label>
+        <!--<input type="text" class="form-control" id="currency" placeholder="Escoja moneda" style="max-width:200px">-->
+        <select class="form-select" id="currency" style="max-width:200px">
+          <option value="">USD</option>
+          <option>EUR</option>
+          <option>USD</option>
+          <option>JPY</option>
+          <option>CHF</option>
+        </select>
+        <br>
+        <input type="submit" value="Convertir">
+      </form>
+      <div id="result"></div>
+    </div>
+    <hr class="my-4">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
@@ -76,11 +93,11 @@
             <h4 class="my-0 fw-normal">Dos Tramos</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">20-50€<small class="text-muted fw-light">/mes</small></h1>
+            <h1 class="card-title pricing-card-title">20<small class="text-muted fw-light">€/mes</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>Gestión digital</li>
               <li>Periodo valle y periodo punta</li>
-              <li>4,22 €/kW y 32,46 €/kW al año, respectivamente</li>
+              <li>Precio personalizado según país</li>
               <li>Atención personalizada</li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-primary">Contáctanos</button>
@@ -93,11 +110,11 @@
             <h4 class="my-0 fw-normal">Tres tramos</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">30-60€<small class="text-muted fw-light">/mes</small></h1>
+            <h1 class="card-title pricing-card-title">30<small class="text-muted fw-light">€/mes</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>Gestión digital</li>
               <li>Periodos valle, llano y punta</li>
-              <li>4,22 €/kW, 8,11 €/kW y 32,46 €/kW al año</li>
+              <li>Precio personalizado según país</li>
               <li>Atención personalizada</li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-primary">Contáctanos</button>
@@ -110,11 +127,11 @@
             <h4 class="my-0 fw-normal">Elige 8 Horas</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">50-80€<small class="text-muted fw-light">/mes</small></h1>
+            <h1 class="card-title pricing-card-title">50<small class="text-muted fw-light">€/mes</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>Gestión digital</li>
               <li>Periodo valle de 8 a elegir</li>
-              <li>4,22 €/kW y 32,46 €/kW al año, respectivamente</li>
+              <li>Precio personalizado según país</li>
               <li>Atención personalizada</li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-primary">Contáctanos</button>
@@ -173,6 +190,6 @@
     </ul>
   </footer>
 
-
+</div>
 </body>
 </html>
